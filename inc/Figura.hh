@@ -12,7 +12,7 @@
 */ 
 class Figura
 {   
-    public:
+    protected:
     /*!
     * \brief Pole przechowuje dane o macierzy obrotu figury
     */ 
