@@ -356,6 +356,20 @@ Wektor<TYP,ROZMIAR> Macierz<TYP,ROZMIAR>::operator * (const Wektor<TYP,ROZMIAR> 
     return Wek;
 }
 
+template<class TYP, int ROZMIAR>
+bool Macierz<TYP,ROZMIAR>::operator == (const Macierz & M)
+{   
+    for (int i = 0; i < ROZMIAR; i++)
+    {
+        for (int j = 0; j < ROZMIAR; j++)
+        {
+            if(tab[i][j] != M[i][j])
+                return false;
+        }
+    }
+    return true;
+}
+
 
 /* 
     Funkcja ta zamienia dwa wiersze macierzy

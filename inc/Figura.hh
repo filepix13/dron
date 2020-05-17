@@ -10,7 +10,7 @@
 /*!
 * \brief Klasa przechowuje dane o środku figury oraz jej macierzy obrotu
 */ 
-class Figura
+class Figura : public InterfejsRysowania
 {   
     protected:
     /*!

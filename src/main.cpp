@@ -6,6 +6,9 @@
 #include "Figura.hh"
 #include "Prostopadloscian.hh"
 #include "Dron.hh"
+#include "Plaszczyzna.hh"
+#include "Graniastoslup.hh"
+#include "Wirnik.hh"
 
 
 using std::vector;
@@ -17,12 +20,18 @@ using std::endl;
 
 int main() {
 
-  std::shared_ptr<drawNS::Draw3DAPI> api(new APIGnuPlot3D(-10,10,-10,10,-10,10,0));
-  Wektor<double,3> przesu;
-  MacierzOb M;
+  Wektor<double, 3> scena(10,10,12);
+
+  std::shared_ptr<drawNS::Draw3DAPI> api(new APIGnuPlot3D(-scena[0],scena[0],-scena[1], scena[1],-scena[2],scena[2],0));
+
   char c;
   double ruch, kat;
   Dron d(api);
+  Plaszczyzna powierzchnia(scena, "blue");
+  Plaszczyzna dno(scena[0],scena[1],-scena[2], "grey");
+
+  dno.rysuj(api);
+  powierzchnia.rysuj(api);
 
   std::cout << "r - zadaj ruch na wprost" << std::endl;
   std::cout << "o - zmień orientację" << std::endl;

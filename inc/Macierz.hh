@@ -51,6 +51,8 @@ class Macierz
 
   Macierz operator *= (const Macierz & M);
 
+  bool operator == (const Macierz & M);
+
   //Deklaracja funkcji zamieniającej dwa wiersze macierzy
   void zamiana (int x, int y);
 

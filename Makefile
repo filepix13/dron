@@ -7,7 +7,7 @@ dron: obj/Dr3D_gnuplot_api.o obj/main.o obj/Macierz.o obj/Wektor.o
 	g++ -o dron obj/main.o obj/Dr3D_gnuplot_api.o obj/Macierz.o obj/Wektor.o -lpthread
 
 obj/main.o: src/main.cpp inc/Dr3D_gnuplot_api.hh inc/Wektor.hh inc/Macierz.hh inc/MacierzOb.hh inc/Figura.hh inc/InterfejsRysowania.hh\
-						inc/Prostopadloscian.hh inc/Dron.hh
+						inc/Prostopadloscian.hh inc/Dron.hh inc/Plaszczyzna.hh inc/Graniastoslup.hh inc/Wirnik.hh
 	g++ ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/Dr3D_gnuplot_api.o: src/Dr3D_gnuplot_api.cpp inc/Dr3D_gnuplot_api.hh
