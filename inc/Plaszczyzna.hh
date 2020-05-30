@@ -2,6 +2,7 @@
 #define PLASZCZYZNA_HH
 
 #include "InterfejsRysowania.hh"
+#include "InterfejsPrzeszkody.hh"
 #include "Wektor.hh"
 #include <string>
 
@@ -9,7 +10,7 @@ using std::vector;
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
 
-class Plaszczyzna : public InterfejsRysowania
+class Plaszczyzna : public InterfejsRysowania, public InterfejsPrzeszkody
 {   
     protected:
     /*!
@@ -24,30 +25,9 @@ class Plaszczyzna : public InterfejsRysowania
     
     public:
     /*!
-    * \brief Konstruktor parametryczny płaszczyzny
-    * \param W - jest to wektor wymiarów
-    * \param k - jest to string koloru
+    * \brief Konstruktor bezparametryczny Płaszczyzny
     */
-    Plaszczyzna(Wektor<double, 3> W, std::string k)
-    {
-        wymiary = W;
-        kolor = k;
-    }
-
-    /*!
-    * \brief Konstruktor parametryczny płaszczyzny
-    * \param x - wymiar x płaszczyzny
-    * \param y - wymiar y płaszczyzny
-    * \param z - wymiar z płaszczyzny
-    * \param k - string koloru 
-    */
-    Plaszczyzna(double x, double y, double z, std::string k)
-    {
-        wymiary[0] = x;
-        wymiary[1] = y;
-        wymiary[2] = z;
-        kolor = k;
-    }
+    Plaszczyzna() = default;
 
 
     /*!

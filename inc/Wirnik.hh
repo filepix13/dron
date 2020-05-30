@@ -2,6 +2,7 @@
 #define WIRNIK_HH
 
 #include "Graniastoslup.hh"
+#include <math.h> 
 
 class Wirnik : public Graniastoslup
 {
@@ -9,8 +10,22 @@ class Wirnik : public Graniastoslup
     /*!
     * \brief Konstruktor bezparametryczny Wirnika
     */
-    Wirnik(){};
+    Wirnik() = default;
+
+
+    /*!
+    *\brief Konstruktor parametryczny Wirnika
+    *\param x - Współrzędna x srodka Wirnika
+    *\param y - Współrzędna y srodka Wirnika 
+    *\param z - Współrzędna z srodka Wirnika   
+    */
+    Wirnik(double x, double y, double z)
+    {
+        srodek.ustaw(x,y,z);
+        Graniastoslup g(x,y,z);
+    }
     
+
     /*!
     * \brief Funkcja obraca drona wokół osi W o 10 stopni
     */
@@ -19,20 +34,6 @@ class Wirnik : public Graniastoslup
         MacierzOb M('y', 10);
 
         zmien_orient(M);
-    }
-
-
-    /*!
-    * \brief Funkcja zmienia srodek wirnika na podane dane
-    * \param x Współrzędna x wektora
-    * \param y Współrzędna y wektora
-    * \param z Współrzędna z wektora
-    */
-    void zmianSrodek(double x, double y, double z)
-    {
-        srodek[0] = x;
-        srodek[1] = y;
-        srodek[2] = z; 
     }
 };
 

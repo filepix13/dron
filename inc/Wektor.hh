@@ -19,8 +19,10 @@ class Wektor
   //Deklaracja konstruktora
   Wektor();
 
-  Wektor(int x, int y, int z);
+  //Deklaracja konstruktora parametrycznego
+  Wektor(double x, double y, double z);
 
+  //Deklaracja funkcji zmieniającej dane wektora
   Wektor ustaw(double x, double y, double z);
 
   //Deklaracja funkcji dodającej dwa wektory

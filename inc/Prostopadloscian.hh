@@ -56,6 +56,24 @@ class Prostopadloscian : public Figura
         bazaWierzcholki[7].ustaw(this->srodek[0] + 1, this->srodek[1] - 1, this->srodek[2] - 1);
     };
 
+    
+    /*!
+    * \brief Konstruktor parametryczny
+    * \param W - przechowuje współrzędne w których ma się pojawić prostopadłościan
+    */
+    Prostopadloscian(Wektor<double, 3> W)
+    {   
+        srodek = W;
+        bazaWierzcholki[0].ustaw(this->srodek[0] + 1, this->srodek[1] + 1, this->srodek[2] + 1);
+        bazaWierzcholki[1].ustaw(this->srodek[0] - 1, this->srodek[1] + 1, this->srodek[2] + 1);
+        bazaWierzcholki[2].ustaw(this->srodek[0] - 1, this->srodek[1] - 1, this->srodek[2] + 1);
+        bazaWierzcholki[3].ustaw(this->srodek[0] + 1, this->srodek[1] - 1, this->srodek[2] + 1);
+        bazaWierzcholki[4].ustaw(this->srodek[0] + 1, this->srodek[1] + 1, this->srodek[2] - 1);
+        bazaWierzcholki[5].ustaw(this->srodek[0] - 1, this->srodek[1] + 1, this->srodek[2] - 1);
+        bazaWierzcholki[6].ustaw(this->srodek[0] - 1, this->srodek[1] - 1, this->srodek[2] - 1);
+        bazaWierzcholki[7].ustaw(this->srodek[0] + 1, this->srodek[1] - 1, this->srodek[2] - 1);
+    };
+
 
     /*!
     * \brief Funkcja rysująca aktualne wierzchołki w gunplocie

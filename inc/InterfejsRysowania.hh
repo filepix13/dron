@@ -14,7 +14,7 @@ class InterfejsRysowania
     /*!
     * \brief Pole przechowuje indeksy rysunków gunplotowych
     */
-    int index[3];
+    int index[6];
 
     public:
     /*!

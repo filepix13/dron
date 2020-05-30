@@ -12,12 +12,12 @@ class Graniastoslup : public Figura
 {
     protected:
     /*!
-    * \brief Pole przechowuje dane o wierzchołkach bazowych prostopadłościanu
+    * \brief Pole przechowuje dane o wierzchołkach bazowych graniatosłupa
     */ 
     Wektor<double,3> bazaWierzcholkiG[12];
 
     /*!
-    * \brief Pole przechowuje dane o wierzchołkach aktualnych danego prostopadłościanu
+    * \brief Pole przechowuje dane o wierzchołkach aktualnych danego graniastosłupa
     */ 
     Wektor<double,3> noweWierzcholkiG[12];
 
@@ -38,6 +38,30 @@ class Graniastoslup : public Figura
     */
     Graniastoslup()
     {
+        bazaWierzcholkiG[0].ustaw(this->srodek[0], this->srodek[1] + 0.5, this->srodek[2] + 1);
+        bazaWierzcholkiG[1].ustaw(this->srodek[0] + (sqrt(3)/2), this->srodek[1] + 0.5, this->srodek[2] + 0.5);
+        bazaWierzcholkiG[2].ustaw(this->srodek[0] + (sqrt(3)/2), this->srodek[1] + 0.5, this->srodek[2] - 0.5);
+        bazaWierzcholkiG[3].ustaw(this->srodek[0], this->srodek[1] + 0.5, this->srodek[2] - 1);
+        bazaWierzcholkiG[4].ustaw(this->srodek[0] - (sqrt(3)/2), this->srodek[1] + 0.5, this->srodek[2] - 0.5);
+        bazaWierzcholkiG[5].ustaw(this->srodek[0] - (sqrt(3)/2), this->srodek[1] + 0.5, this->srodek[2] + 0.5);
+        bazaWierzcholkiG[6].ustaw(this->srodek[0], this->srodek[1] - 0.5, this->srodek[2] + 1);
+        bazaWierzcholkiG[7].ustaw(this->srodek[0] + (sqrt(3)/2), this->srodek[1] - 0.5, this->srodek[2] + 0.5);
+        bazaWierzcholkiG[8].ustaw(this->srodek[0] + (sqrt(3)/2), this->srodek[1] - 0.5, this->srodek[2] - 0.5);
+        bazaWierzcholkiG[9].ustaw(this->srodek[0], this->srodek[1] - 0.5, this->srodek[2] - 1);
+        bazaWierzcholkiG[10].ustaw(this->srodek[0] - (sqrt(3)/2), this->srodek[1] - 0.5, this->srodek[2] - 0.5);
+        bazaWierzcholkiG[11].ustaw(this->srodek[0] - (sqrt(3)/2), this->srodek[1] - 0.5, this->srodek[2] + 0.5);
+    }
+
+
+    /*!
+    *\brief Konstruktor parametryczny Graniastosłupa
+    *\param x - Współrzędna x srodka graniastosłupa
+    *\param y - Współrzędna y srodka graniastosłupa 
+    *\param z - Współrzędna z srodka graniastosłupa   
+    */
+    Graniastoslup(double x, double y, double z)
+    {
+        srodek.ustaw(x,y,z);
         bazaWierzcholkiG[0].ustaw(this->srodek[0], this->srodek[1] + 0.5, this->srodek[2] + 1);
         bazaWierzcholkiG[1].ustaw(this->srodek[0] + (sqrt(3)/2), this->srodek[1] + 0.5, this->srodek[2] + 0.5);
         bazaWierzcholkiG[2].ustaw(this->srodek[0] + (sqrt(3)/2), this->srodek[1] + 0.5, this->srodek[2] - 0.5);
