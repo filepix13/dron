@@ -4,41 +4,6 @@
 
 
 /* 
-    Konstuktor zmiennej Wektor, zeruje tabelę dane
-    Argumenty:
-        this
-    Zwraca:
-        this
-*/
-template<class TYP, int ROZMIAR>
-Wektor<TYP,ROZMIAR>::Wektor()
-{
-    for(int i=0; i<ROZMIAR; i++)
-    {
-        dane[i]=0;
-    }
-}
-
-
-/* 
-    Konstuktor parametryczny zmiennej Wektor
-    Argumenty:
-        x - zmienia dana[0]
-        y - zmienia dana[1]
-        z - zmienia dana[2]
-    Zwraca:
-        this
-*/
-template<>
-Wektor<double,3>::Wektor(double x, double y, double z)
-{
-    dane[0] = x;
-    dane[1] = y;
-    dane[2] = z;
-}
-
-
-/* 
     Funkcja zmieniająca zmienna Wektor
     Argumenty:
         x - zmienia dana[0]

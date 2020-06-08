@@ -88,7 +88,7 @@ class Dron : public InterfejsDrona, public InterfejsPrzeszkody, public Prostopad
             usleep(5000);
         }
         
-        for(int i = 0; i<100; i++)
+        for(int i = 0; i<100; i++)     
         {   
             usun(api, index[0]);
             usun(api, index[1]);
@@ -105,7 +105,7 @@ class Dron : public InterfejsDrona, public InterfejsPrzeszkody, public Prostopad
             index[2] = P.rysuj(api);
             usleep(5000);
 
-            for (auto elem : kolekcja_przeszkod) 
+            for (auto elem : kolekcja_przeszkod)        /* Sprawdzanie kolizji dla każdej klatki ruchu*/
             {
                 if(elem->czy_kolizja(shared_from_this()))
                 {   

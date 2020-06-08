@@ -23,7 +23,46 @@ class Figura : public InterfejsRysowania
     */ 
     Wektor<double,3> srodek;
 
+    /*!
+    * \brief Pole zlicza ilość obiektów klasy figura które istnieją
+    */
+    static int ile_istnieje;
+
+    /*!
+    * \brief Pole zlicza ilość obiektów klasy figura które utworzono
+    */
+    static int ile_utworzono;
+
     public:
+    /*!
+    * \brief Konstruktor bezparametryczny
+    */
+    Figura()
+    {
+        ile_istnieje++;
+        ile_utworzono++;
+    }
+    
+
+    /*!
+    * \brief Konstruktor kopiujący
+    * \param nowy - Figura którą kopiujemy
+    */
+    Figura(const Figura & nowy) : orientacja(nowy.orientacja), srodek(nowy.srodek) 
+    {
+        ile_istnieje++;
+        ile_utworzono++;
+    }
+
+
+    /*!
+    * \brief Dekonstuktor
+    */
+    ~Figura()
+    {
+        ile_istnieje--;
+    }
+
     /*!
     * \brief Funkcja zmieniająca macierz obrotu
     * \param M - Macierz o którą obracamy,
@@ -41,7 +80,28 @@ class Figura : public InterfejsRysowania
     {
         srodek += orientacja * Przez;
     }
+
+    /*!
+    * \brief Funckja zwraca ilość istniejących obiektów klasy figura
+    */
+    static int zwroc_istniejace()
+    {
+        return ile_istnieje;
+    }
+
+
+    /*!
+    * \brief Funckja zwraca ilość utworzonych obiektów klasy figura
+    */
+    static int zwroc_utworzone()
+    {
+        return ile_utworzono;
+    }
 };
+
+int Figura::ile_istnieje = 0;
+int Figura::ile_utworzono = 0;
+
 
 
 #endif
